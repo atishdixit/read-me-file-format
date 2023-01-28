@@ -77,3 +77,9 @@ Answer to the third question with *italic words*.
 
 ***
 ## For more information [Here](https://www.ionos.com/digitalguide/websites/web-development/readme-file/)  
+
+## What is "pom" packaging in maven?
+* <packaging>pom</packaging>
+* <packaging>jar</packaging>
+* <packaging>war</packaging>
+> “pom” packaging is nothing but the container, which contains other packages/modules like jar, war, and ear. if you perform any operation on outer package/container.  > like mvn clean compile install. then inner packages/modules also get clean compile install. no need to perform a separate operation for each package/module.
