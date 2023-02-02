@@ -1,0 +1,85 @@
+# Define the aws Template firmate Version
+AWSTemplateFormatVersion: "version date"
+
+# [optional] Define Transformation details 
+# AWS CloudFormation executes macros in the order that they're specified
+# One or more macros that AWS CloudFormation uses to process your template
+Transform:
+  - AWS::Serverless-2016-10-31
+  
+Description:
+  Provide details of you applications so that other developer can understand purpose of this template.
+
+#Resources:
+#  resourceName:
+#    type: service-provider::service-name::data-type-name
+# Type can be from list https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html
+#  properties:
+#    Handler: ....
+#    CodeUri: .....
+#    Runtime: ...
+#    Role: ...
+#    Events:
+#        EnvetName:
+#          Type: ...
+#         Properties:
+#            Path: ...
+#            Method: ...
+Resources:
+ GetHelloWorld:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.aws.codestar.projecttemplates.handler.HelloWorldHandler
+      CodeUri: ./target/HelloWorld-1.0.jar
+      Runtime: java8
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+      Events:
+        GetEvent:
+          Type: Api
+          Properties:
+            Path: /java
+            Method: get
+
+  PostHelloWorld:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: com.aws.codestar.projecttemplates.handler.HelloWorldHandler
+      CodeUri: ./target/HelloWorld-1.0.jar
+      Runtime: java8
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
+      Events:
+        PostEvent:
+          Type: Api
+          Properties:
+            Path: /
+            Method: post
+        
+Metadata:
+  template metadata
+
+#Parameters: | When a developer creates a Pipeline job in CloudBees CI based on a Pipeline Template, the available parameters are displayed 
+# in the user interface as options for which the developer can specify a value. (https://docs.cloudbees.com/docs/admin-resources/latest/pipeline-templates-user-guide/using-parameters-in-template)
+#  ParameterName:
+#    Type: anyone [string, number, boolean, credentials]
+#    Description: ....
+Parameters:
+    ProjectId:
+      type: string
+      Description: "Define the project ID for accessing the details of Project"
+
+#Rules:
+  set of rules
+
+Mappings:
+  set of mappings
+
+Conditions:
+  set of conditions
+nsforms
+
+Outputs:
+  set of outputs
