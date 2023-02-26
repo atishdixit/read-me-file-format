@@ -1,0 +1,34 @@
+Java:
+Performance-Speed: 
+P. Faster Speed is crucial in enterprise-level application development. Since it’s a compiled language, Java is faster at executing code than Python. Python is an interpreted language which determines the type of data at runtime.
+P Java is an excellent choice for programmers looking for increased speed combined with flexibility across platforms.
+P: If your application needs fast processing or large amounts of data per unit time, then go with Java since its JVM offers better optimization for this purpose
+P: Java is a statically typed and compiled language, and Python is a dynamically typed and interpreted language. This single difference makes Java faster at runtime and easier to debug.
+P Java is better developed for building web applications. Python’s Flask library is still only able to build the basics to a Python-based UI but is great for creating a Python back-end with an API endpoint.
+P: Multi-threading (OS level threads). Very good concurrency primitives. The java.util.concurrent package is a great for different types of abstractions like threadpools, atomic primitives, oncurrent hashmaps. Futures and CompleteableFutures provide library support for async functions (no syntactic sugar).
+N. The garbage collection-based memory management affects the performance of the application.
+
+Memory Consumption:
+N- Higher memory consumption.
+Binding: Static
+Compiled/Interpreted: Compiled (More Robust)
+Readability: Easy
+Syntax: Verbose
+Ref:
+ https://becominghuman.ai/python-vs-java-a-comprehensive-comparison-to-not-miss-out-in-2021-22-f3f3e569fc5f
+https://www.snaplogic.com/glossary/python-vs-java-performance
+Python:
+P Python has excellent data processing libraries and good data visualization capabilities 
+P Python is easier to use and easier to read.
+N Multi-threading not advisable for compute intensive code due to Global Interpreter Lock. People have observed their programs becoming slower due to threads.
+Performance-Speed - Slower 
+	
+
+Summary
+•	AI/ML - Python
+•	High Concurrency servers - Java
+•	Command line tools - Python
+•	Streaming data processing - Java (due to Kafka/Spark/Flink)
+•	Web development - Java/Python
+•	Cross platform GUI programs like IDEs - Java
+
